@@ -16,6 +16,14 @@ class MainContainer extends Component {
         location: {},
     }
 
+    componentDidMount() {
+        const userLogged = localStorage.getItem('@UserLogged');
+        if (userLogged) {
+            this.setState({ isLogged: true });
+            this.props.getUser(userLogged);
+        }
+    }
+
     componentDidUpdate({ reposStarred, user, location }) {
         (() => {
             if (user.type === this.props.user.type) return;
@@ -41,11 +49,14 @@ class MainContainer extends Component {
         })();
     }
 
-    logout = () => this.setState({
-        isLogged: false,
-        reposStarred: [],
-        location: {},
-    })
+    logout = () => {
+        localStorage.setItem('@UserLogged', '')
+        this.setState({
+            isLogged: false,
+            reposStarred: [],
+            location: {},
+        })
+    }
 
     render() {
         const { getUser, user, reposStarred } = this.props;

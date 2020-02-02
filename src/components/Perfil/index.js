@@ -7,6 +7,7 @@ const Perfil = ({ user }) => (
             <img src={user.avatar_url} className="avatar" alt="imagem-perfil" />
         </a>
         <div className="user_name">{user.login}</div>
+        <div className="user">{user.name}</div>
         <div className="bio">{user.bio}</div>
         <a href={user.html_url} target="blank">Visualizar Perfil</a>
     </div>

@@ -4,18 +4,12 @@ import api from '../../services/api';
 import { GET_USER_REQUEST, success, failure } from './action';
 
 
-function* getUser({ userName }) {
+function* getUser({ payload }) {
     try {
-        let { data } = yield call(api.get, `/users/${userName}`);
-        if (data) {
-            yield put(success(data));
-        } else {
-            yield put(failure("Usuario não encontrado!"));
-        }
+        let { data } = yield call(api().get, `/users/${payload}`);
+        yield put(success(data));
     } catch (error) {
-        yield put(
-            failure("Desculpe, algo não ocorreu como esperado!")
-        );
+        yield put(failure("Usuario não encontrado!"));
     }
 }
 

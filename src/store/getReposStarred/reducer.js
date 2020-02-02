@@ -1,15 +1,15 @@
 import {
-    GET_USER_REQUEST, GET_USER_SUCCESS, GET_USER_FAILURE,
+    GET_REPOS_STARRED_REQUEST, GET_REPOS_STARRED_SUCCESS, GET_REPOS_STARRED_FAILURE,
 } from './action';
 
 export default (initState = {}, action) => {
     const { type, payload } = action;
     switch (type) {
-        case GET_USER_REQUEST:
+        case GET_REPOS_STARRED_REQUEST:
             return Object.assign({}, { type, isLoading: true }, { payload });
-        case GET_USER_SUCCESS:
+        case GET_REPOS_STARRED_SUCCESS:
             return Object.assign({}, { type, isLoading: false }, { payload });
-        case GET_USER_FAILURE:
+        case GET_REPOS_STARRED_FAILURE:
             return Object.assign({}, { type, isLoading: false }, { payload });
         default:
             return initState;

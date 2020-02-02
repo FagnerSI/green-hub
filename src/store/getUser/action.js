@@ -4,7 +4,7 @@ export const GET_USER_FAILURE = 'GET_USER_FAILURE';
 
 
 export default function getUser(userName) {
-    return { type: GET_USER_REQUEST, userName }
+    return { type: GET_USER_REQUEST, payload: userName }
 }
 
 export function success(user) {

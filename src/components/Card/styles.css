@@ -1,0 +1,27 @@
+.card_container {
+  position: relative;
+  background-color: #f3f3f3;
+  box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.342);
+  padding: 10px;
+  height: 100px;
+  width: 32%;
+  min-width: 220px;
+  margin: 7px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.star {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+@media (max-width: 480px) {
+  .card_container {
+    width: 100%;
+  }
+}
